@@ -25,8 +25,10 @@ Firecracker, a serial port and a transceiver.
 
 ## Bugs/Issues/TODO
   * Make mobile interface prettier beyond just swipable
-  * Pupept Module for deployment
   * new blog post
+
+## Deployment
+  * Puppet Modules for all the things
 
 ## License
 BSD Copyright (c) 2012 Michael Stahnke
