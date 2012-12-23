@@ -27,13 +27,13 @@ class ChristmasTree < Sinatra::Base
   end
 
   get "/#{ADDRESS}/on" do
-    %x{bash -c "sudo heyu fon #{ADDRESS}"}
+    %x{bash -c "heyu fon #{ADDRESS}"}
     @address = ADDRESS
     erb :on
   end
 
   get "/#{ADDRESS}/off" do
-    %x{bash -c "sudo heyu foff #{ADDRESS}"}
+    %x{bash -c "heyu foff #{ADDRESS}"}
     @address = ADDRESS
     erb :off
   end
