@@ -1,0 +1,12 @@
+---
+  environment: production
+  chdir: /srv/christmas_tree
+  address: 0.0.0.0
+  port: 9091
+  pid: /srv/christmas_tree/tmp/thin.pid
+  rackup: /srv/christmas_tree/config.ru
+  log: /srv/christmas_tree/log/thin.log
+  max_conns: 1024
+  timeout: 30
+  max_persistent_conns: 512
+  daemonize: true
