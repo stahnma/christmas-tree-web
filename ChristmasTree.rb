@@ -12,13 +12,11 @@ ADDRESS = 'A1'
 class ChristmasTree < Sinatra::Base
 
   set :environment, :production
-  set :logging
   set :root, File.dirname(__FILE__)
   set :public_folder, File.dirname(__FILE__)+ '/public'
 
   get '/' do
       @address = ADDRESS
-      puts "Current directory is #{%x{pwd}}"
     if request.user_agent =~ /ipad|ipod|android/i
       erb :index
     else
