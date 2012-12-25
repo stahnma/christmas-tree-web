@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- CSS -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
 
       html,
@@ -49,14 +49,14 @@
       }
 
     </style>
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57-precomposed.png">
 
 <script>
   function displayImg(str)
@@ -75,7 +75,7 @@
     var xmlhttp;
     var resp;
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET', '/<%= @address %>/' + button , false);
+    xmlhttp.open('GET', '<%= @url %>/<%= @address %>/' + button , false);
     xmlhttp.send();
     resp = xmlhttp.responseText;
     displayImg(resp);
@@ -91,8 +91,8 @@
           <h1>Christmas Tree Control Center</h1>
         </div>
         <p class="lead">Control your Christmas Tree lights with the buttons below.</p>
-          <a href='#' onClick="callOut('off')"><img src='/off.png' title="Turn the tree off"></a>
-          <a href='#' onClick="callOut('on')"><img src='/on.png' title="Turn the tree on"></a>
+          <a href='<%= @url %>/#' onClick="callOut('off')"><img src='off.png' title="Turn the tree off"></a>
+          <a href='<%= @url %>/#' onClick="callOut('on')"><img src='on.png' title="Turn the tree on"></a>
          <p><span id="ImgArea"></span></p>
       </div>
 
@@ -105,8 +105,8 @@
         <p class="muted credit">BSD License. Based hacking from <a href="http://twitter.com/stahnma">@stahnma</a>.</p>
       </div>
     </div>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
 

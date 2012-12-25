@@ -7,6 +7,7 @@ require 'erb'
 #--------------------------------------------------------------
 #  You may need to modify the Address of your X10 Transceiver.
 ADDRESS = 'A1'
+MOUNTED_URL='/xmas'
 #--------------------------------------------------------------
 
 class ChristmasTree < Sinatra::Base
@@ -15,8 +16,12 @@ class ChristmasTree < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :public_folder, File.dirname(__FILE__)+ '/public'
 
+  # Will log in localdir/log
+  set :logging
+
   get '/' do
-      @address = ADDRESS
+    @url = MOUNTED_URL
+    @address = ADDRESS
     if request.user_agent =~ /ipad|ipod|android/i
       erb :index
     else
@@ -26,18 +31,19 @@ class ChristmasTree < Sinatra::Base
 
   get "/#{ADDRESS}/on" do
     %x{bash -c "heyu fon #{ADDRESS}"}
+    @url = MOUNTED_URL
     @address = ADDRESS
     erb :on
   end
 
   get "/#{ADDRESS}/off" do
     %x{bash -c "heyu foff #{ADDRESS}"}
+    @url = MOUNTED_URL
     @address = ADDRESS
     erb :off
   end
 
-  #TODO probably some more error handling
+   not_found do
+    redirect '/'
+   end
 end
-
-# Used only when testing
-#ChristmasTree.run!

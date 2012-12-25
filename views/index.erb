@@ -145,9 +145,9 @@ function determineSwipeDirection() {
     var swipedElement = document.getElementById(triggerElementID);
       xmlhttp = new XMLHttpRequest();
     if ( swipeDirection == 'left' ) {
-      xmlhttp.open('GET', '/<%= @address %>/off', false);
+      xmlhttp.open('GET', '<%= @url %>/<%= @address %>/off', false);
     } else if ( swipeDirection == 'right' ) {
-      xmlhttp.open('GET', '/<%= @address %>/on', false);
+      xmlhttp.open('GET', '<% @url %>/<%= @address %>/on', false);
     }
     xmlhttp.send();
     resp = xmlhttp.responseText;
